@@ -10,12 +10,15 @@ import {
     LocalHospital as HospitalIcon
 } from "@material-ui/icons";
 import "./Sidebar.css"
+import {useStateValue} from "./StateProvider";
 
 function Sidebar() {
+    const [{user}, dispatch] = useStateValue();
+
     return <div className="sidebar">
         <SidebarRow
-            src="https://media-exp1.licdn.com/dms/image/C5603AQHS_cWQTz4fxg/profile-displayphoto-shrink_400_400/0?e=1608768000&v=beta&t=2Wo-HhCeO95DduRrtGH2C8GQBft_dbBRFHQGqN2Bo_c"
-            title="Mann Patel"/>
+            src={user.photoURL}
+            title={user.displayName}/>
         <SidebarRow Icon={HospitalIcon} title="COVID-19 Information Center" />
         <SidebarRow Icon={EmojiFlagsIcon} title="Pages"/>
         <SidebarRow Icon={PeopleIcon} title="Friends"/>
