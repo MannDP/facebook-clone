@@ -15,7 +15,7 @@ function MessageSender() {
         e.preventDefault();
 
         // some clever db logic
-        
+
         setInput("");
         setImageUrl("");
     }
